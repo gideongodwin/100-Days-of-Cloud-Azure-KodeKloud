@@ -1,4 +1,4 @@
-<img width="576" height="212" alt="Screenshot 2026-03-03 093511" src="https://github.com/user-attachments/assets/d322126e-b855-41d7-855e-ad2aa1336a72" />## Day 31: Deploying and Managing a Web Application
+## Day 31: Deploying and Managing a Web Application
 
 #### Task Details:
 The Nautilus DevOps team is tasked with deploying a Python-based web application on Azure. You need to create a web app using the following specifications:
