@@ -10,5 +10,5 @@ The Nautilus DevOps team is tasked with deploying a Python-based web application
 5) Create a new App Service Plan named devops-learn-python with the SKU Basic B1.
 6) Application Insights should be disabled.
 7) Add tags:
-      Name: WebAppLearning
-      Environment: Dev
+   `Name: WebAppLearning` \
+   `Environment: Dev` \
