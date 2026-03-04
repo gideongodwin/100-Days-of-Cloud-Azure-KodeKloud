@@ -27,5 +27,5 @@ As a member of the Nautilus DevOps Team, your task is to perform the following:
     --source-container devops-source-24632 \
     --source-blob devops.txt
   ```
-5. Verify the file exists in the destination container
+5. Verify the file exists in the destination container \
   `az storage blob list --account-name devopsst32386 --container-name devops-dest-17395 --output table`
