@@ -46,8 +46,7 @@ Apply a Lifecycle Management rule named `devops-del-rule` to the container `devo
     --file /root/tempfile.txt
    ```
 4. Create a lifecycle management policy to delete blobs older than 7 days
-   ```
-   cat > lifecycle-policy.json <<EOF
+  cat > lifecycle-policy.json <<EOF
 {
   "rules": [
     {
@@ -70,7 +69,7 @@ Apply a Lifecycle Management rule named `devops-del-rule` to the container `devo
     }
   ]
 }
-EOF ```
+EOF
 
 5. Apply the lifecycle policy to the storage account:
    ```
