@@ -22,5 +22,5 @@ Task:
 
 #### STEPS:
 1. Sign in to the [Azure Portal](https://portal.azure.com/)
-2. From the Storage Accounts dashboard, click on create button
+2. From the Storage Accounts dashboard, click on create button.
 
