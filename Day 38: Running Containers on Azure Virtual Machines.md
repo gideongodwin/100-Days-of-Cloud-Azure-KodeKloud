@@ -22,7 +22,7 @@ Task:
 #### STEPS:
 1. Sign in to the [Azure Portal](https://portal.azure.com/)
 2. From the Storage Accounts dashboard, click on create button.
-
+https://i.ytimg.com/vi/kDBzBp0opGc/maxresdefault.jpg
 3. On the Basics tab, select the existing Resource group, and then enter a name for the Storage account.
 
 4. On the storage account, add a new container (private)
@@ -33,9 +33,9 @@ ssh azureuser@<nautilus-vm public-ip>
 sudo -i
  ```  
 7. edit the `testfile.txt` add the following
-   ```
+```
    vi testfile.txt
    # add "this is a test file and save"
-
-8. Copy the access key and Upload the File to Blob Storage:
+```
+8. Copy the access key and Upload the File to Blob Storage \
    `az storage blob upload --account-name nautilusstor7355 --account-key <access-key> --container-name nautilus-container7355 --name testfile.txt --file /home/azureuser/testfile.txt`
