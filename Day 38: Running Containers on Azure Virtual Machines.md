@@ -38,5 +38,6 @@ sudo -i
    vi testfile.txt
    # add "this is a test file and save"
 ```
-8. Copy the access key and Upload the File to Blob Storage \
-   `az storage blob upload --account-name nautilusstor7355 --account-key <access-key> --container-name nautilus-container7355 --name testfile.txt --file /home/azureuser/testfile.txt`
+8. Copy the access key and Upload the File to Blob Storage
+```
+az storage blob upload --account-name nautilusstor7355 --account-key <access-key> --container-name nautilus-container7355 --name testfile.txt --file /home/azureuser/testfile.txt`
