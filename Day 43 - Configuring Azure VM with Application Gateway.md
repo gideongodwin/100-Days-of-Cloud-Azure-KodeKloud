@@ -133,6 +133,10 @@ Note: Wait for the Application Gateway resource to be fully deployed before proc
 
 31. Select Review + create, then Create
 
+32. Navigate to the `datacenter-agw` resource
+33. Locate the `Frontend public IP address` on the Overview page.
+34. Copy that IP address and paste it into a new web browser tab.
+35. You should see the default `"Welcome to nginx!` page, confirming that the Application Gateway is successfully routing traffic to your backend VM.
 
 
 
