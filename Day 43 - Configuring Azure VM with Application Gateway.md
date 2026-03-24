@@ -7,8 +7,10 @@ The Nautilus Development Team needs to set up a new Azure Virtual Machine (VM) a
 
 - Create a Virtual Machine:
   > Create a VM named `datacenter-vm` using any available Ubuntu image. Configure the instance with the following settings:
+  
   > Size: Choose a lightweight VM size (e.g., `Standard_B1s`).
-  > Authentication: Use `SSH public key` authentication. (Please select `use existing public key` option, create public-key locally and paste contents of `~/.ssh/id_rsa.pub`)
+
+   > Authentication: Use `SSH public key` authentication. (Please select `use existing public key` option, create public-key locally and paste contents of `~/.ssh/id_rsa.pub`)
 
 - OS Disk: Use a `Standard HDD`
 
