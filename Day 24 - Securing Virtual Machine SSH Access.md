@@ -13,17 +13,17 @@ The Nautilus DevOps team needs to set up a new Virtual Machine (VM) on the Azure
   `cat /root/.ssh/id_rsa.pub`
 
 2. Sign in to the [Azure Portal](https://portal.azure.com/)
+
 3. From the Azure portal dashboard, Click on Virtual Machines and Create.
 
 <img width="679" height="238" alt="Screenshot 2026-02-19 115901" src="https://github.com/user-attachments/assets/8590fa02-ff61-4a6b-a689-4d2bf2b529bf" />
 
-#### CREATE THE VM ON THE AZURE PORTAL
-
-4. On the Basics tab, enter datacenter-vm in the Virtual machine name field
+4. On the Basics tab, enter `datacenter-vm` in the Virtual machine name field
 
 <img width="680" height="399" alt="Screenshot 2026-02-19 120318" src="https://github.com/user-attachments/assets/64d68207-709d-414b-84e9-1c84fb1fe342" />
 
 5. Paste the ssh key, generated on azure client.
+
 <img width="676" height="197" alt="Screenshot 2026-02-19 120210" src="https://github.com/user-attachments/assets/b0f46183-feb6-4426-af6d-d309a156ee9e" />
 
 6. Set the VM size to Standard_B1s
