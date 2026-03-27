@@ -1,4 +1,4 @@
-## Day 46 - EventHub to Blob Storage Integration Setup
+<img width="1204" height="385" alt="Screenshot 2026-03-26 154025" src="https://github.com/user-attachments/assets/7e3c3d24-88cf-4eee-9e0d-07dad6bbe4d5" />## Day 46 - EventHub to Blob Storage Integration Setup
 
 ## Task Details:
 
@@ -88,9 +88,71 @@ The client host already has a Python script named `send_logs.py` located under `
 
 <img width="598" height="167" alt="Screenshot 2026-03-26 152248" src="https://github.com/user-attachments/assets/3030b9a3-4955-4355-a058-0e7242f05b0d" />
 
-14. 
+14. On the Basics tab, configure the following:
+
+<img width="599" height="426" alt="Screenshot 2026-03-26 152548" src="https://github.com/user-attachments/assets/b27dcba1-dad9-4b8d-80c6-4e95b2c78c7c" />
+
+15. In the Azure CLI, run the following command to create an SSH key:
+   ```
+    ssh-keygen
+   ```
+
+16. Copy the contents of the public key and paste
+    ```
+    cat .ssh/id_rsa.pub
+    ```
+
+    <img width="660" height="429" alt="Screenshot 2026-03-26 152617" src="https://github.com/user-attachments/assets/5358d9c1-523c-48e2-ba71-ade7c36c7093" />
+
+17. Select the disk size and type.
+
+<img width="609" height="130" alt="Screenshot 2026-03-26 152636" src="https://github.com/user-attachments/assets/54659896-cf61-40c6-8747-e76742ce480c" />
+
+18. Select Review + create, then create
+
+19.  In the Azure client, copy the `send_logs.py` script from the client host to the `/home/azureuser`.
+```
+scp send_logs.py azureuser@20.51.156.119:/home/azureuser
+```
+
+20. ssh into vm `nautilus-vm`
+```
+ssh azureuser@<vm's-public-ip>
+```
+
+21. Install Required Python Packages
+```
+# Install the Python virtual environment tool
+    sudo apt update
+    sudo apt install python3-venv -y
+
+# Create the new virtual environment (named "env")
+    python3 -m venv ~/env
+
+# Activate the virtual environment
+    source ~/env/bin/activate
+
+# Install the necessary Azure SDK libraries
+    pip install azure-storage-blob azure-eventhub
+```
+
+22. In the Azure portal, navigate to the Event Hub namespace `nautilus-namespace`
+ 
+23. Under Settings, select Shared access policies → RootManageSharedAccessKey, and copy the Connection string–primary key.
+
+<img width="1365" height="467" alt="Screenshot 2026-03-26 153734" src="https://github.com/user-attachments/assets/88534294-7aef-40b4-a8ac-18614ab51ee1" />
+
+
+24. In the Azure portal, navigate to the Storage Account `nautilusst1338`
+
+25. Under Security +  Networking > Access Keys, copy the connection string (key1)
 
 
 
+Update `send_logs.py` script to send logs to Event Hub + Blob Storage
+```
+# Open the Script
+vi send_logs.py
 
 
+```
