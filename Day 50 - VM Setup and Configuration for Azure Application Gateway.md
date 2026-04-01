@@ -1,4 +1,4 @@
-<img width="629" height="145" alt="Screenshot 2026-04-01 144450" src="https://github.com/user-attachments/assets/950a36da-0165-4970-b2cb-9d34759ad878" /><img width="736" height="272" alt="568640628-9c52e4fe-7657-4af6-ac3b-cb854d5568bc" src="https://github.com/user-attachments/assets/ec9b27c4-5842-40a4-aae1-00e1eb9b8fce" />## Day 50 - VM Setup and Configuration for Azure Application Gateway
+## Day 50 - VM Setup and Configuration for Azure Application Gateway
 
 ## Task Details:
 
