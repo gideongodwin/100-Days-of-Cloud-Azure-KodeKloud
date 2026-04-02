@@ -40,7 +40,3 @@ The Nautilus DevOps team is strategizing the migration of a portion of their inf
    
 7. Review + create
 
-<img width="681" height="598" alt="Screenshot 2026-02-06 132221" src="https://github.com/user-attachments/assets/4420899e-da96-4db9-a6b8-679daac3b188" />
-
-
-
