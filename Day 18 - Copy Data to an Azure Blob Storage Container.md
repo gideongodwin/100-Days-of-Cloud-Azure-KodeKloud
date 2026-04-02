@@ -9,6 +9,8 @@ A Blob container named `datacenter-blob-9136` already exists in the `Central US`
 
 - Copy the file `/tmp/datacenter.txt` to the Blob container `datacenter-blob-9136`
 
+## Steps:
+
 1. Verify the storage account
     ```
     az storage account list | grep name
