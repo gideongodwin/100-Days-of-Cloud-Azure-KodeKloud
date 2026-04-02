@@ -1,8 +1,12 @@
 ## Day 12: Add and Manage Tags for Azure Virtual Machines
 
-#### Task Details:
+## Task Details:
+
 The Nautilus DevOps team is migrating a portion of their infrastructure to Azure. During the migration, they have created several virtual machines (VMs) in different regions. The team has identified one VM that is not tagged properly so they decided to tag it as needed.
+
 - Add the tag `Environment=dev` to the virtual machine named `datacenter-vm`
+
+## Steps:
 
 1. Sign in to the [Azure Portal](https://portal.azure.com/)
 
