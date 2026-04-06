@@ -68,6 +68,6 @@ This task requires resizing the existing VM disk and mounting a new data disk to
       ```
 
 15. Verify changes
-   ```
-   lsblk
-   ```
+      ```
+      lsblk
+      ```
