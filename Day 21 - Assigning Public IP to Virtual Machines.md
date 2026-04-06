@@ -1,44 +1,57 @@
-## Day 21: Assigning Public IP to Virtual Machines
+## Day 21 - Assigning Public IP to Virtual Machines
 
-##Task Details
-The Nautilus DevOps Team has received a new request from the Development Team to set up a new Azure Virtual Machine (VM). This VM will be used to host a new application that requires a stable public IP address. To ensure that the VM has a consistent public IP, a Static Public IP address needs to be associated with it. The VM will be named devops-vm, and the Static Public IP will be named devops-pip. This setup will help the Development Team to have a reliable and consistent access point for their application.
+## Task Details
+
+The Nautilus DevOps Team has received a new request from the Development Team to set up a new Azure Virtual Machine (VM). This VM will be used to host a new application that requires a stable public IP address. To ensure that the VM has a consistent public IP, a Static Public IP address needs to be associated with it. The VM will be named `devops-vm` and the Static Public IP will be named `devops-pip`
+This setup will help the Development Team to have a reliable and consistent access point for their application.
+
 - Create an Azure VM named `devops-vm` using any available Ubuntu image, with the VM size `Standard_B1s`
+
 - Generate an SSH public key on the `azure-client` host and associate it with the VM for SSH access
+
 - Associate a Static Public IP address named `devops-pip` with this VM
+
 - Ensure the VM is accessible via SSH using the generated public key
 
+## STEPS
+
 1. Sign in to the [Azure Portal](https://portal.azure.com/)
-2. From the Azure portal dashboard, navigate to Virtual machines, and then select + Create
 
-<img width="677" height="357" alt="Screenshot 2026-02-13 153748" src="https://github.com/user-attachments/assets/289d7993-4775-43de-8c65-60a1e94f8f15" />
+2. Select the "Virtual Machines" from the Azure portal  
 
-3. On the Basics tab, under Project details, select the existing Resource group. Then enter the Virtual machine name and choose Central US as the Region
+3. From the Virtual Machines page > Create VM
 
-<img width="679" height="597" alt="Screenshot 2026-02-13 154507" src="https://github.com/user-attachments/assets/cc122b0d-9f58-4023-9688-e86c491d5877" />
+<img width="683" height="246" alt="552697394-dc9877bf-7bad-47f4-bbb6-bee818569e71" src="https://github.com/user-attachments/assets/099750e8-697f-4ae5-a31f-8fa66bba01ee" />
 
-4. Select the `Standard_B1s` vm size
+4. On the Basics tab, enter the VM name, and choose the appropriate region
 
-<img width="683" height="411" alt="Screenshot 2026-02-13 154602" src="https://github.com/user-attachments/assets/e0d116d0-a686-440c-8e92-f82c749eef53" />
+<img width="583" height="371" alt="549899526-cc122b0d-9f58-4023-9688-e86c491d5877" src="https://github.com/user-attachments/assets/5b66223b-a910-418c-b04e-213b11f2db54" />
 
-5. Select the use existing public key, Go to the Azure client and run the following commands, then copy and paste the public key into the SSH public key field.
+5. Select the `Standard_B1s` vm size
 
-- `ssh keygen`
-- `cat /root/.ssh/id_rsa.pub`
+<img width="604" height="199" alt="549899697-e0d116d0-a686-440c-8e92-f82c749eef53" src="https://github.com/user-attachments/assets/8d38d1d9-9d68-4949-af30-ddf125aea862" />
+ 
+6. In the Azure CLI, run the following command to create an SSH key:
+    ```
+    ssh-keygen
+    ```
 
-<img width="678" height="372" alt="Screenshot 2026-02-13 155102" src="https://github.com/user-attachments/assets/12e78e19-e2cf-4011-81d3-6082970a8ecd" />
+7. Copy the contents of the public key and paste
+    ```
+    cat .ssh/id_rsa.pub
+    ```
+<img width="656" height="318" alt="549899917-12e78e19-e2cf-4011-81d3-6082970a8ecd" src="https://github.com/user-attachments/assets/a8fce56d-575f-4e27-b96a-8413d552fd69" />
 
-6. On the Disks tab, under OS disk, select the appropriate Disk type and configure the required Disk size (GiB) as needed
+8. On the Disks tab, select the appropriate Disk type and configure the required Disk size (GiB) as needed
 
-<img width="682" height="299" alt="Screenshot 2026-02-13 155226" src="https://github.com/user-attachments/assets/62457e21-a650-415c-80e8-668008f9ce29" />
+<img width="657" height="250" alt="549901144-62457e21-a650-415c-80e8-668008f9ce29" src="https://github.com/user-attachments/assets/bf101db6-be6e-434d-a816-04018253f538" />
 
-7. On the Networking tab, under Public IP, select Create new, then provide the required details to configure the new public IP address.
+ 
+9. On the Networking tab, under Public IP, select Create new, then provide the required details to configure the new public IP address.
 
-<img width="674" height="595" alt="Screenshot 2026-02-13 155402" src="https://github.com/user-attachments/assets/7f1c8bd4-c765-4024-be73-a740e97520e9" />
+ <img width="674" height="568" alt="549901523-7f1c8bd4-c765-4024-be73-a740e97520e9" src="https://github.com/user-attachments/assets/fa690db4-6049-4579-a15b-93b2cdbbc293" />
 
-8. Click on create
-
-<img width="679" height="595" alt="Screenshot 2026-02-13 155434" src="https://github.com/user-attachments/assets/dea8a4be-6fea-4be0-98ef-eb652064e339" />
-
+10. Review + Create
 
 
 
