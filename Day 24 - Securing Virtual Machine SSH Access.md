@@ -50,4 +50,7 @@ The Nautilus DevOps team needs to set up a new Virtual Machine (VM) on the Azure
 
 7. Review + Create
  
-
+8. In the Azure CLI, run the following command to verify connectivity
+    ```
+    ssh azureuser@<vm-public>
+    ```
