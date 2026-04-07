@@ -56,15 +56,15 @@ You need to create a web app using the following specifications:
 
 10. Set the Runtime Stack to `Python`
 
-   <img width="593" height="296" alt="Screenshot 2026-03-03 093818" src="https://github.com/user-attachments/assets/ab95aa62-5f3b-4056-adc3-07a78efd73cf" />
+      <img width="593" height="296" alt="Screenshot 2026-03-03 093818" src="https://github.com/user-attachments/assets/ab95aa62-5f3b-4056-adc3-07a78efd73cf" />
 
 11. On the Monitor + Secure tab, ensure Application Insights is `disabled`
 
-   <img width="588" height="242" alt="Screenshot 2026-03-03 093852" src="https://github.com/user-attachments/assets/16aa5e26-b207-47d3-96d1-cf1082b657b8" />
+      <img width="588" height="242" alt="Screenshot 2026-03-03 093852" src="https://github.com/user-attachments/assets/16aa5e26-b207-47d3-96d1-cf1082b657b8" />
 
 12. On the Tags tab, add the following:
 
-   <img width="562" height="232" alt="Screenshot 2026-03-03 093912" src="https://github.com/user-attachments/assets/6e6cea45-fa8e-4626-9fbf-7ac760198422" />
+      <img width="562" height="232" alt="Screenshot 2026-03-03 093912" src="https://github.com/user-attachments/assets/6e6cea45-fa8e-4626-9fbf-7ac760198422" />
 
 13. Review + Create
 
