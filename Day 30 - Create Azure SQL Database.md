@@ -29,7 +29,7 @@ For this task, create one `publicly` accessible Azure SQL Database instance alon
 
     <img width="958" height="341" alt="Screenshot 2026-03-02 195004" src="https://github.com/user-attachments/assets/e0c548c7-bf2c-425a-bedc-231b5c64c5b7" />
 
-3. On the Basics tab, in the Database name field, enter `devops-sqldb`
+3. On the Basics tab, enter `devops-sqldb` in the Database name field.
 
    <img width="738" height="350" alt="557095981-88ec95df-918c-43eb-88d4-d1545522d629" src="https://github.com/user-attachments/assets/ec242900-114c-44d6-aeb2-df23e04ef067" />
 
