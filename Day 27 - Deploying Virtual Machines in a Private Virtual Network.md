@@ -3,7 +3,9 @@
 ## Task Details 
 
 The Nautilus DevOps team is expanding their Azure infrastructure and requires the setup of a private Virtual Network (VNet) along with a subnet. This VNet and subnet configuration will ensure that resources deployed within them remain isolated from external networks and can only communicate within the VNet. Additionally, the team needs to provision a Virtual Machine (VM) under the newly created private VNet. 
-This VM should be accessible over SSH from within the VNet only, allowing for secure communication and resource management within the Azure environment. The name of the VNet must be `nautilus-priv-vnet`
+This VM should be accessible over SSH from within the VNet only, allowing for secure communication and resource management within the Azure environment.
+
+The name of the VNet must be `nautilus-priv-vnet`
 
 - Create a subnet named nautilus-`priv-subnet` under the same. Further, create a Virtual Machine named `nautilus-priv-vm` under this VNet
 
