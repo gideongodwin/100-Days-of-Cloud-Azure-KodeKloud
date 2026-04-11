@@ -1,35 +1,41 @@
 ## Day 37: Setting Up MySQL on a Virtual Machine in Azure
 
-#### Task Details:
+## Task Details:
+
 The Nautilus DevOps team is tasked with integrating a PHP application hosted on an Azure VM with a MySQL database hosted on another Azure VM. This will validate the application's ability to connect to the database in the cloud.
 
-Create the MySQL VM:
+- Create the MySQL VM:
+   - Create a VM named `devops-mysql-vm` using the MySQL Jetware image from the Azure Marketplace.
+   - Configure the VM in the `Central US` region.
+   - Use `Password` as the authentication type.
+   - Set the username as `devops_admin` and the password as `Namin@123456`
+   - Allow `inbound` traffic on port `3306` to enable MySQL access.
 
-Create a VM named devops-mysql-vm using the MySQL Jetware image from the Azure Marketplace.
-Configure the VM in the Central US region.
-Use Password as the authentication type.
-Set the username as devops_admin and the password as Namin@123456.
-Allow inbound traffic on port 3306 to enable MySQL access.
-Setup the MySQL Database:
+- Setup the MySQL Database:
+   - SSH into the `devops-mysql-vm`.
+   - Use the `sudo /jet/enter mysql` command to access the MySQL shell.
+   - Create a database named `devops_db`
+   - Create a MySQL user named `devops_user` with password `password123`
+   - Grant all privileges on the `devops_db` database to this user.
 
-SSH into the devops-mysql-vm.
-Use the sudo /jet/enter mysql command to access the MySQL shell.
-Create a database named devops_db.
-Create a MySQL user named devops_user with password password123.
-Grant all privileges on the devops_db database to this user.
-PHP VM Setup:
+- PHP VM Setup:
+   - A VM named `devops-php-vm` already exists in the `East US` region.
+   - This VM is hosting a PHP application and contains a pre-existing `db_test.php` file in the `/var/www/html/` directory.
 
-A VM named devops-php-vm already exists in the East US region.
-This VM is hosting a PHP application and contains a pre-existing db_test.php file in the /var/www/html/ directory.
-Database Connection Configuration:
+- Database Connection Configuration:
+   - Retrieve the public IP address of the `devops-mysql-vm`
+   - Update the database connection settings in the `db_test.php` file to use the MySQL credentials and public IP address of the `devops-mysql-vm`
 
-Retrieve the public IP address of the devops-mysql-vm.
-Update the database connection settings in the db_test.php file to use the MySQL credentials and public IP address of the devops-mysql-vm.
-Validation:Access the db_test.php file from the devops-php-vm using its public IP address.
-Ensure the file displays the message Connected successfully, confirming the connection between the PHP application and the MySQL database.
+Validation:
 
-#### STEPS:
+- Access the `db_test.php` file from the `devops-php-vm` using its public IP address
+
+- Ensure the file displays the message `Connected successfully`, confirming the connection between the `PHP application` and the `MySQL database`.
+
+## Steps:
+
 1. Sign in to the [Azure Portal](https://portal.azure.com/)
+
 2. From the Virtual Network dashboard, click on create button
 
 <img width="652" height="362" alt="Screenshot 2026-03-10 113634" src="https://github.com/user-attachments/assets/46509c7b-4454-49ca-a4d2-b8a7cd472316" />
