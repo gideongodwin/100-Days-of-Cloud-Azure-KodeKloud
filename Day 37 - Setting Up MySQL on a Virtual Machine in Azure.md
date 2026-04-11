@@ -36,67 +36,84 @@ Validation:
 
 1. Sign in to the [Azure Portal](https://portal.azure.com/)
 
-2. From the Virtual Network dashboard, click on create button
+2. On the Virtual Network page, click on create button
 
-<img width="652" height="362" alt="Screenshot 2026-03-10 113634" src="https://github.com/user-attachments/assets/46509c7b-4454-49ca-a4d2-b8a7cd472316" />
+   <img width="652" height="362" alt="Screenshot 2026-03-10 113634" src="https://github.com/user-attachments/assets/46509c7b-4454-49ca-a4d2-b8a7cd472316" />
 
 3. On the Basics tab, enter the VM name and select the appropriate region.
+
 4. Select the MySQL Jetware image from the Azure Marketplace
- <img width="627" height="506" alt="Screenshot 2026-03-10 114209" src="https://github.com/user-attachments/assets/7ed8b1dc-fd03-487c-be5b-2acdaff86e54" />
- <img width="582" height="145" alt="Screenshot 2026-03-10 134235" src="https://github.com/user-attachments/assets/90bde596-4d3e-488a-b4e5-cb7aa1abaf2d" />
+   
+   <img width="627" height="506" alt="Screenshot 2026-03-10 114209" src="https://github.com/user-attachments/assets/7ed8b1dc-fd03-487c-be5b-2acdaff86e54" />
+    
+   <img width="582" height="145" alt="Screenshot 2026-03-10 134235" src="https://github.com/user-attachments/assets/90bde596-4d3e-488a-b4e5-cb7aa1abaf2d" />
 
 5. Use Password as the authentication type.
-<img width="585" height="174" alt="Screenshot 2026-03-10 144538" src="https://github.com/user-attachments/assets/3df23f09-333c-4cc9-a888-7f8bc6ba482d" />
+
+   <img width="585" height="174" alt="Screenshot 2026-03-10 144538" src="https://github.com/user-attachments/assets/3df23f09-333c-4cc9-a888-7f8bc6ba482d" />
 
 6. Allow Inbound Traffic on Port 3306
+
    <img width="638" height="538" alt="Screenshot 2026-03-10 145641" src="https://github.com/user-attachments/assets/d1fb51a5-961a-4ca7-be8e-0204cfc52054" />
 
-7.  SSH into `devops-mysql-vm` and Set Up the Database \
-   `ssh devops_admin@<MYSQL_VM_PUBLIC_IP>`
+7.  SSH into `devops-mysql-vm` and Set Up the Database
+      ```
+      ssh devops_admin@<MYSQL-vm-public-ip>
+      ```
 
-8. Once inside the VM, run these commands:
-```
-# Access the MySQL shell via Jetware
-sudo /jet/enter mysql
+8. In the Azure Client, run th following command to access the MySQL shell via Jetware
+   ``` 
+   sudo /jet/enter mysql
+   ```
 
-# Inside MySQL shell — run the following SQL commands:
-CREATE DATABASE devops_db;
+9. Inside MySQL shell — run the following SQL commands:
+   ```
+   CREATE DATABASE devops_db;
+   
+   CREATE USER 'devops_user'@'%' IDENTIFIED BY 'password123';
+   
+   GRANT ALL PRIVILEGES ON devops_db.* TO 'devops_user'@'%';
+   
+   FLUSH PRIVILEGES;
+   
+   exit;
+   ```
 
-CREATE USER 'devops_user'@'%' IDENTIFIED BY 'password123';
+10. SSH into the PHP VM and update the config file `db_test.php file`
+      ```
+      ssh azureuser@<php-vm-public-ip>
+      ```
 
-GRANT ALL PRIVILEGES ON devops_db.* TO 'devops_user'@'%';
+11.  Edit the `db_test.php` file
+      ```
+      sudo vi /var/www/html/db_test.php
+      ```
 
-FLUSH PRIVILEGES;
-
-exit;
-```
-9. SSH into the PHP VM and update the config file `db_test.php file` \
-    `ssh azureuser@<PHP_VM_PUBLIC_IP>`
-10.  Edit the `db_test.php` file \
-    `sudo vi /var/www/html/db_test.php`
-11. Replace the contents of `db_test.php` with:
-```
-<?php
-$servername = "<MYSQL_VM_PUBLIC_IP>";   // Public IP of devops-mysql-vm
-$username   = "devops_user";
-$password   = "password123";
-$dbname     = "devops_db";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-?>
-```
+12. Replace the contents of `db_test.php` with:
+      ```
+      <?php
+      $servername = "<MYSQL_VM_PUBLIC_IP>";   // Public IP of devops-mysql-vm
+      $username   = "devops_user";
+      $password   = "password123";
+      $dbname     = "devops_db";
+      
+      // Create connection
+      $conn = new mysqli($servername, $username, $password, $dbname);
+      
+      // Check connection
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+      echo "Connected successfully";
+      ?>
+      ```
 
 12. Save and exit
-13. Validate the connection, Open a web browser and navigate to:
-    `<PHP_VM_PUBLIC_IP>/db_test.php`
-    
+
+13. Validate the connection: Open a web browser and navigate to:
+      ```
+      <php-vm-public-ip>/db_test.php
+      ```    
 
 
 
