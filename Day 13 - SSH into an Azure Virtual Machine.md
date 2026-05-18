@@ -50,7 +50,7 @@ You may need to adjust the firewall or security group rules for the VM to allow 
 
 5. Overwrite root’s authorized_keys
     ```
-    sudo sh -c 'cat /tmp/id_rsa.pub > /root/.ssh/authorized_keys'
+    sudo sh -c 'cat /tmp/id_rsa.pub > /root/.ssh/authorized_keys
     ```
 
 6. Remove the temporary public key file
