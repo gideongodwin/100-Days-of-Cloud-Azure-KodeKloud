@@ -1,4 +1,4 @@
-## Day 3: Create VM using Azure CLI
+## Day 3 - Create VM using Azure CLI
 
 ## Task Details:
 
