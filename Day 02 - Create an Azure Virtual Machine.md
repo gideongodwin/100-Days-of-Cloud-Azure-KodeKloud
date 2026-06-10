@@ -35,7 +35,7 @@ The requirements are:
 
    <img width="668" height="363" alt="536776020-a2c947ae-86d9-4f8a-b997-cfee2aa62524" src="https://github.com/user-attachments/assets/901dcbff-b876-431f-9d5c-bf0effb442f7" />
 
-6. Allow inbound traffic for SSH on `port 22`
+6. Allow selected ports and then select `SSH (22)` fom the drop-down.
 
    <img width="665" height="346" alt="536780230-59d52dd5-4ade-4a74-8d8f-db1035fdbb22" src="https://github.com/user-attachments/assets/c40ea47a-8508-48df-9b16-5fdf77d00081" />
 
